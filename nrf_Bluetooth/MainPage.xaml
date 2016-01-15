@@ -6,23 +6,41 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel x:Name="contentPanel" Margin="10" Padding="20,0,0,0">
-            <TextBlock Text="nrf8001 Bluetooth App" Margin="0,30,0,40" FontSize="21.333" FontWeight="Bold" Height="32"/>
-            <TextBlock FontSize="18" Height="32" TextWrapping="Wrap" Text="Pair the nrf8001 bluetooth module with the PC using system Settings, use the Run button to find the device, then select it."/>
-            <Button x:Name="RunButton" Content="Run" Click="RunButton_Click" HorizontalAlignment="Left" Margin="0,10" FontSize="18.667"/>
-            <ListBox x:Name="DevicesListBox" FontSize="16" Visibility="Collapsed" SelectionChanged="DevicesListBox_SelectionChanged">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <TextBlock x:Name="bleInfoTextBlock" TextWrapping="Wrap" Text="[BLE Device Information]"/>
-            <TextBlock x:Name="sendTextBlock" TextWrapping="Wrap" Text="Type a message below:" Margin="0,30,0,0" Visibility="Collapsed"/>
-            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="" Margin="0,10,608,10" Height="102" Visibility="Collapsed"/>
-            <Button x:Name="writeButton" Content="Send to BLE Device" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,1061,0" Click="Write_Button_Click" Visibility="Collapsed"/>
-        </StackPanel>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Light">
+        <SplitView x:Name="SplitView" DisplayMode="Inline" IsPaneOpen="True" OpenPaneLength="320" RequestedTheme="Dark">
+            <SplitView.Pane>
+                <StackPanel Background="Teal">
+                    <!--<Button x:Name="MenuOpenButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="MenuOpen_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="SearchButton" FontFamily="Segoe MDL2 Assets" Content="&#xE8AD;"
+                    Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Find Devices" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>-->
+                    <TextBlock Text="nrf8001 Bluetooth App" Margin="20,30,20,40" FontSize="21.333" FontWeight="Bold" Height="32"/>
+                    <TextBlock FontSize="18" Height="132" TextWrapping="Wrap" Text="Pair the nrf8001 bluetooth module with the PC using system Settings, use the Run button to find the device, then select it." Margin="10"/>
+                    <Button x:Name="RunButton" Content="Run" Click="RunButton_Click" HorizontalAlignment="Left" Margin="10,10,0,10" FontSize="18.667"/>
+                    <ListBox x:Name="DevicesListBox" FontSize="16" Visibility="Collapsed" SelectionChanged="DevicesListBox_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock x:Name="bleInfoTextBlock" TextWrapping="Wrap" Text="[BLE Device Information]" Margin="10,0,0,10"/>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <StackPanel x:Name="receivePanel" HorizontalAlignment="Right" Width="810">
+                    <TextBlock x:Name="receiveText" RequestedTheme="Light" FontSize="21.333" Text="Receive" Margin="20,20,0,0" FontWeight="Bold" />
+                    <TextBox x:Name="receiveTextBox" Margin="20,10,386,0" Height="151"/>
+                    <TextBlock x:Name="sendText" TextWrapping="Wrap" Text="Send" Margin="24,20,0,0" Foreground="Black" FontSize="21.333" FontWeight="Bold"/>
+                    <TextBlock x:Name="sendTextBlock" Foreground="Black" TextWrapping="Wrap" Text="Type a message below:" Margin="20,10,0,0" FontSize="18.667" FontFamily="Segoe UI Semibold"/>
+                    <TextBox x:Name="writeMessageBox" TextWrapping="Wrap" Text="" Margin="20,10,386,10" Height="143"/>
+                    <Button x:Name="writeButton" Content="Send to BLE Device" Click="Write_Button_Click" RequestedTheme="Dark" FontSize="18.667" Margin="20,0,0,0" Background="#33020101" BorderBrush="Black" Foreground="Black"/>
+                    <TextBlock x:Name="messageWriteResponse" Text="Result" Foreground="Black" Margin="20,0,0,0"/>
+                </StackPanel>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>
