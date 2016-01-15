@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="nrf_Bluetooth.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:nrf_Bluetooth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel x:ConnectionId='1' x:Name="contentPanel" Margin="10" Padding="20,0,0,0">
+            <TextBlock Text="nrf8001 Bluetooth App" Margin="0,30,0,40" FontSize="21.333" FontWeight="Bold" Height="32"/>
+            <TextBlock FontSize="18" Height="32" TextWrapping="Wrap" Text="Pair the nrf8001 bluetooth module with the PC using system Settings, use the Run button to find the device, then select it."/>
+            <Button x:ConnectionId='2' x:Name="RunButton" Content="Run"                         HorizontalAlignment="Left" Margin="0,10" FontSize="18.667"/>
+            <ListBox x:ConnectionId='3' x:Name="DevicesListBox" FontSize="16" Visibility="Collapsed"                                                   >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock x:ConnectionId='4' x:Name="bleInfoTextBlock" TextWrapping="Wrap" Text="[BLE Device Information]"/>
+            <TextBlock x:ConnectionId='5' x:Name="sendTextBlock" TextWrapping="Wrap" Text="Type a message below:" Margin="0,30,0,0" Visibility="Collapsed"/>
+            <TextBox x:ConnectionId='6' x:Name="textBox" TextWrapping="Wrap" Text="" Margin="0,10,608,10" Height="102" Visibility="Collapsed"/>
+            <Button x:ConnectionId='7' x:Name="writeButton" Content="Send to BLE Device" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,1061,0"                            Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
