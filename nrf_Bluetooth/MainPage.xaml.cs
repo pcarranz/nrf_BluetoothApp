@@ -93,18 +93,50 @@ namespace nrf_Bluetooth
 
         private async void Write_Button_Click(object sender, RoutedEventArgs e)
         {
-            var writer = new Windows.Storage.Streams.DataWriter();
-            writer.WriteString(writeMessageBox.Text);
+            var writer = new DataWriter();
+            writer.WriteString(writeMessageBox.Text + "\r\n");
 
             try
             {
                 var res = await writeCharacteristic.WriteValueAsync(writer.DetachBuffer(), GattWriteOption.WriteWithoutResponse);
                 messageWriteResponse.Text = res.ToString();
             }
-            catch (NullReferenceException ex)
+            catch (Exception ex)
             {
-                messageWriteResponse.Text = ex.ToString();
+                messageWriteResponse.Text = "Message too long, keep under 20 chars";
             }   
+        }
+
+        private async void LED_On_Click(object sender, RoutedEventArgs e)
+        {
+            var writer = new DataWriter();
+            writer.WriteString("1\r\n");
+
+            try
+            {
+                var res = await writeCharacteristic.WriteValueAsync(writer.DetachBuffer(), GattWriteOption.WriteWithoutResponse);
+                messageWriteResponse.Text = res.ToString();
+            }
+            catch (Exception ex)
+            {
+                messageWriteResponse.Text = "Turn on LED failed: " + ex;
+            }
+        }
+
+        private async void LED_Off_Click(object sender, RoutedEventArgs e)
+        {
+            var writer = new DataWriter();
+            writer.WriteString("0\r\n");
+
+            try
+            {
+                var res = await writeCharacteristic.WriteValueAsync(writer.DetachBuffer(), GattWriteOption.WriteWithoutResponse);
+                messageWriteResponse.Text = res.ToString();
+            }
+            catch (Exception ex)
+            {
+                messageWriteResponse.Text = "Turn off LED failed: " + ex;
+            }
         }
 
         //private void menuopen_click(object sender, routedeventargs e)

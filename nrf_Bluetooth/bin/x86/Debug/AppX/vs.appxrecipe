@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\pcarranza\Documents\Visual Studio 2015\Projects\nrf_Bluetooth\nrf_Bluetooth\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-15T23:39:00.704</Modified>
+      <Modified>2016-01-18T21:45:08.281</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\pcarranza\Documents\Visual Studio 2015\Projects\nrf_Bluetooth\nrf_Bluetooth\bin\x86\Debug\nrf_Bluetooth.exe">
       <PackagePath>entrypoint\nrf_Bluetooth.exe</PackagePath>
-      <Modified>2016-01-15T23:38:59.987</Modified>
+      <Modified>2016-01-18T21:45:05.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pcarranza\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -506,11 +506,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pcarranza\Documents\Visual Studio 2015\Projects\nrf_Bluetooth\nrf_Bluetooth\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-15T22:47:55.886</Modified>
+      <Modified>2016-01-18T21:45:07.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pcarranza\Documents\Visual Studio 2015\Projects\nrf_Bluetooth\nrf_Bluetooth\bin\x86\Debug\Core\nrf_Bluetooth.exe">
       <PackagePath>nrf_Bluetooth.exe</PackagePath>
-      <Modified>2016-01-15T23:39:00.692</Modified>
+      <Modified>2016-01-18T21:45:08.272</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
